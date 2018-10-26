@@ -7,28 +7,12 @@
     <title>DOM lifecycle</title>
     <meta name="description" content="Sprinkles lifecycle events onto the DOM api">
 
-    <script defer src="./src/index.js"></script>
   </head>
   <body>
+    
+    <script src="./src/index.js"></script>
+    
     <script>
-
-      const onmountEvent = new Event('onmount')
-      
-      const realCreateElement = document.createElement.bind(document)
-
-      document.createElement = (name) => {
-        let element = realCreateElement(name)
-
-        element.addEventListener("DOMNodeInserted", (ev) => {
-          element.dispatchEvent(onmountEvent)
-        }, false);
-        
-        return element
-      }
-
-
-
-
 
       // TEST HERE
       let el = document.createElement("div")
