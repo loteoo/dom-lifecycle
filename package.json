@@ -1,0 +1,14 @@
+{
+  "version": "1.0.0",
+  "name": "dom-lifecycle",
+  "description": "Dirty DOM life cycle events",
+  "author": "Alexandre Lotte",
+  "license": "MIT",
+  "scripts": {
+    "start": "parcel test.html --open",
+    "build": "env NODE_ENV=production parcel build ./test.html --no-source-maps --detailed-report"
+  },
+  "devDependencies": {
+    "parcel-bundler": "^1.9.7"
+  }
+}

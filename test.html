@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge,chrome=1">
+
+    <title>DOM lifecycle</title>
+    <meta name="description" content="Sprinkles lifecycle events onto the DOM api">
+
+    <script defer src="./src/index.js"></script>
+  </head>
+  <body>
+    <script>
+
+      const onmountEvent = new Event('onmount')
+      
+      const realCreateElement = document.createElement.bind(document)
+
+      document.createElement = (name) => {
+        let element = realCreateElement(name)
+
+        element.addEventListener("DOMNodeInserted", (ev) => {
+          element.dispatchEvent(onmountEvent)
+        }, false);
+        
+        return element
+      }
+
+
+
+
+
+      // TEST HERE
+      let el = document.createElement("div")
+      let text = document.createTextNode("Element!")
+      el.appendChild(text)
+      el.addEventListener('onmount', event => {
+        console.log("Element mounted!")
+        console.log(event)
+      }, false)
+
+      document.body.appendChild(el)
+
+
+    </script>
+  </body>
+</html>
