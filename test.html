@@ -18,7 +18,9 @@
       let el = document.createElement("div")
       let text = document.createTextNode("Element!")
       el.appendChild(text)
-      el.addEventListener('mount', event => {
+      
+      // Listen to the event here
+      el.addEventListener('create', event => {
         console.log("Element mounted!")
         console.log(event)
       }, false)
