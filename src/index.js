@@ -1,5 +1,5 @@
 
-const mountEvent = new Event('mount')
+const mountEvent = new Event('create')
 
 const realCreateElement = document.createElement.bind(document)
 document.createElement = (name) => {
