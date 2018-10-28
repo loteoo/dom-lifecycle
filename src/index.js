@@ -1,5 +1,6 @@
+// Load this file before instanciating your apps
 
-// Create the event
+// Declare the event
 const mountEvent = new Event('create')
 
 // Trigger the event on every new DOM node asynchronously
