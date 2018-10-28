@@ -7,5 +7,5 @@ Example use-cases:
 2. Trigger complex fade-in animations on DOM nodes without using querySelectors or extra timing code  
 3. Instantiate third party libraries on elements as soon as they are created  
 
-Example with hyperapp:
-https://codepen.io/lot3oo/pen/LgRbjj
+Example with hyperapp:  
+https://codepen.io/lot3oo/pen/LgRbjj (Line 75)
